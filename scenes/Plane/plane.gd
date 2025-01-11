@@ -1,4 +1,7 @@
 extends CharacterBody2D
+
+class_name Tappy
+
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 @onready var engine_sound: AudioStreamPlayer2D = $EngineSound
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
@@ -6,7 +9,7 @@ extends CharacterBody2D
 const GRAVITY: float = 1000.0
 const POWER: float = -350.0
 
-signal on_plane_died
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -20,7 +23,7 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 	if is_on_floor():
 		die()
-		
+		pass
 	
 		
 		
@@ -33,5 +36,5 @@ func die() -> void:
 	set_physics_process(false)
 	engine_sound.stop()
 	animated_sprite_2d.stop()
-	on_plane_died.emit()
+	SignalManager.on_plane_died.emit()
 	
