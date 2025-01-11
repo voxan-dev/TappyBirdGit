@@ -27,4 +27,5 @@ stream = ExtResource("3_tf6kh")
 
 [connection signal="body_entered" from="PipeUpper" to="." method="_on_pipe_body_entered"]
 [connection signal="body_entered" from="PipeLower" to="." method="_on_pipe_body_entered"]
+[connection signal="body_entered" from="Laser" to="." method="_on_laser_body_entered"]
 [connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_screen_exited"]
