@@ -22,12 +22,18 @@ func spawn_pipes() -> void:
 	var new_pipes: Pipes = PIPES.instantiate()
 	var yp: float = randf_range(marker_lower.position.y, marker_upper.position.y)
 	new_pipes.position = Vector2(marker_lower.position.x, yp)
-	print("b4", new_pipes.position)
-	print(new_pipes.global_position)
-	pipes_holder .add_child(new_pipes)
-	print("after", new_pipes.position)
-	print(new_pipes.global_position)
+	pipes_holder.add_child(new_pipes)
+	
 
+func stop_pipes() -> void:
+	spawn_pipes_timer.stop()
+	for pipe in pipes_holder.get_children():
+		pipe.set_process(false)
+		
 
 func _on_spawn_pipes_timer_timeout() -> void:
 	spawn_pipes()
+
+
+func _on_plane_died() -> void:
+	stop_pipes()

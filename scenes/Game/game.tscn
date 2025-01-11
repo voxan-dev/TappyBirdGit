@@ -36,4 +36,5 @@ autostart = true
 [node name="PipesHolder" type="Node2D" parent="."]
 position = Vector2(0, 200)
 
+[connection signal="on_plane_died" from="Plane" to="." method="_on_plane_died"]
 [connection signal="timeout" from="SpawnPipesTimer" to="." method="_on_spawn_pipes_timer_timeout"]

@@ -6,6 +6,8 @@ extends CharacterBody2D
 const GRAVITY: float = 1000.0
 const POWER: float = -350.0
 
+signal on_plane_died
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass # Replace with function body.
@@ -18,6 +20,7 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 	if is_on_floor():
 		die()
+		
 	
 		
 		
@@ -30,3 +33,5 @@ func die() -> void:
 	set_physics_process(false)
 	engine_sound.stop()
 	animated_sprite_2d.stop()
+	on_plane_died.emit()
+	
