@@ -11,7 +11,7 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	move_local_x(delta * GameManager.SCROLL_SPEED)
+	move_local_x(delta * GameManager.SCROLL_SPEED * -1)
 	is_off_screen()
 
 func is_off_screen() -> void:

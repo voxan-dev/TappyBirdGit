@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://bixmxjjqcvqjp"]
+[gd_scene load_steps=8 format=3 uid="uid://bixmxjjqcvqjp"]
 
 [ext_resource type="Script" path="res://scenes/Game/game.gd" id="1_1ww7g"]
 [ext_resource type="Texture2D" uid="uid://c1r3ubi1ecsl1" path="res://assets/background/rocks_2.png" id="1_dbkyj"]
 [ext_resource type="PackedScene" uid="uid://bt85m6pqqdskl" path="res://scenes/Plane/plane.tscn" id="2_dp1v5"]
+[ext_resource type="PackedScene" uid="uid://b1a24wwn141rw" path="res://scenes/PBack/parallax_background.tscn" id="2_dynum"]
 [ext_resource type="PackedScene" uid="uid://ckxclx768mcee" path="res://scenes/Border/border.tscn" id="3_p3nvk"]
 [ext_resource type="PackedScene" uid="uid://deghgwrmn7gtp" path="res://scenes/GameOverUI/game_over_ui.tscn" id="5_d1rji"]
 [ext_resource type="PackedScene" uid="uid://bwtdqub34ip6u" path="res://scenes/HUD/hud.tscn" id="6_n7rth"]
@@ -10,7 +11,10 @@
 [node name="Game" type="Node2D"]
 script = ExtResource("1_1ww7g")
 
+[node name="ParallaxBackground" parent="." instance=ExtResource("2_dynum")]
+
 [node name="Background" type="Sprite2D" parent="."]
+visible = false
 z_index = -1
 position = Vector2(248, 345)
 texture = ExtResource("1_dbkyj")
