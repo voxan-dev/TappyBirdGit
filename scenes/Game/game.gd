@@ -12,6 +12,7 @@ const PIPES = preload("res://scenes/PipeS/pipes.tscn")
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	SignalManager.on_plane_died.connect(_on_plane_died)
+	ScoreManager.set_score(0)
 	
 
 

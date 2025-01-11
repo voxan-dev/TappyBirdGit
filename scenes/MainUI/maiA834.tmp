@@ -111,10 +111,8 @@ vertical_alignment = 1
 layout_mode = 2
 size_flags_horizontal = 8
 size_flags_vertical = 1
-text = "0"
+text = "120000"
 label_settings = ExtResource("4_p530j")
-horizontal_alignment = 1
-vertical_alignment = 1
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
