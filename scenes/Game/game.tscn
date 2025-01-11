@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://bixmxjjqcvqjp"]
+
+[ext_resource type="Texture2D" uid="uid://c1r3ubi1ecsl1" path="res://assets/background/rocks_2.png" id="1_dbkyj"]
+[ext_resource type="PackedScene" uid="uid://bt85m6pqqdskl" path="res://scenes/Plane/plane.tscn" id="2_dp1v5"]
+[ext_resource type="PackedScene" uid="uid://ckxclx768mcee" path="res://scenes/Border/border.tscn" id="3_p3nvk"]
+
+[node name="Game" type="Node2D"]
+
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(248, 345)
+texture = ExtResource("1_dbkyj")
+
+[node name="Plane" parent="." instance=ExtResource("2_dp1v5")]
+position = Vector2(53, 393)
+
+[node name="Border" parent="." instance=ExtResource("3_p3nvk")]
+position = Vector2(245, 836)
+
+[node name="Border2" parent="." instance=ExtResource("3_p3nvk")]
+position = Vector2(237, 2)
+rotation = 3.14159

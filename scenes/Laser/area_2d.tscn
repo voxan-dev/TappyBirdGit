@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3 uid="uid://bdmmk6iqnatt5"]
+
+[ext_resource type="Texture2D" uid="uid://dn1da6r1m381b" path="res://assets/pipes/laser2.png" id="1_m4fnn"]
+
+[node name="Laser" type="Area2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(1, 10.0625)
+texture = ExtResource("1_m4fnn")
+centered = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
