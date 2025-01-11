@@ -1,5 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://deghgwrmn7gtp"]
+[gd_scene load_steps=5 format=3 uid="uid://deghgwrmn7gtp"]
 
+[ext_resource type="Script" path="res://scenes/GameOverUI/game_over_ui.gd" id="1_71xkh"]
 [ext_resource type="LabelSettings" uid="uid://dxqlbuoi1n5nv" path="res://assets/60.tres" id="1_a5xcb"]
 [ext_resource type="LabelSettings" uid="uid://dsxtf4f8xeiix" path="res://assets/36.tres" id="2_xc1w5"]
 [ext_resource type="AudioStream" uid="uid://cg0jqy14w7yhm" path="res://assets/audio/game_over.wav" id="3_0otbr"]
@@ -11,6 +12,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_71xkh")
 
 [node name="GameOverLabel" type="Label" parent="."]
 layout_mode = 1
@@ -55,3 +57,5 @@ one_shot = true
 
 [node name="GameOverSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_0otbr")
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
